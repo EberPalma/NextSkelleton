@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-module.exports = {
+const nextConfig = {
     reactStrictMode: false,
     env: {
         MYSQL_HOST: "127.0.0.1",
@@ -10,3 +10,5 @@ module.exports = {
         MYSQL_PASSWORD: "",
     },
 };
+
+module.exports = nextConfig;
