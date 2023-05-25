@@ -1,6 +1,22 @@
+
+//* Next auth imports
+import Provider from "./components/provider";
+
+//* Styles
+import "../styles/styles.css";
+
+//* Fontawesome imports
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+
+library.add(fas, far);
+
+//* Font
+import { nunito } from "@/fonts/fonts";
+
+// * Components
 import Nav from "./components/nav";
-import "../styles/globals.css";
-import {nunito} from '../fonts/fonts';
 
 export const metadata = {
     title: "Create Next App",
@@ -11,10 +27,12 @@ export default function RootLayout({ children }) {
     return (
         <html lang="es-MX">
             <body className={nunito.className}>
-                <header>
-                    <Nav />
-                </header>
-                {children}
+                <Provider>
+                    <header>
+                        <Nav />
+                    </header>
+                    {children}
+                </Provider>
             </body>
         </html>
     );

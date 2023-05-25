@@ -1,4 +1,7 @@
+
+//* Imports
 import Link from "next/link";
+import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 
 export default function Nav(){
     const pages = [
@@ -13,9 +16,9 @@ export default function Nav(){
     ];
 
     return (
-        <ul>
+        <ul className="navigation">
             {pages.map((item)=>
-                ( <li><Link href={item.route}>{item.page}</Link></li> )
+                ( <li><Link href={item.route}>  {item.page}</Link> <Icon className="icon" icon="far-regular fa-chevron-right"/></li> )
             )}
         </ul>
     );

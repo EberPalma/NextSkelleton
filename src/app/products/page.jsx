@@ -3,7 +3,7 @@ import Image from 'next/image';
 import product_image from '../../../public/image.jpg'
 
 export default async function Products(){
-    let products = await fetch('http://localhost:3000/api/products').then(products => products);
+    //let products = await fetch('http://localhost:3000/api/products').then(products => products);
     
     return (
     <div>

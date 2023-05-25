@@ -1,0 +1,19 @@
+body {
+  font-size: 16px;
+}
+
+.icon {
+  height: 1em;
+}
+
+.navigation {
+  list-style: none;
+  display: flex;
+}
+.navigation li {
+  padding: 0 10px;
+}
+.navigation li a {
+  text-decoration: none;
+  color: #0f0f0f;
+}/*# sourceMappingURL=styles.css.map */
