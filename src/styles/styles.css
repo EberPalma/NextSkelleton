@@ -1,3 +1,8 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   font-size: 16px;
 }
@@ -6,14 +11,24 @@ body {
   height: 1em;
 }
 
-.navigation {
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+}
+.nav-container a {
+  text-decoration: none;
+  color: #0f0f0f;
+}
+.nav-container .navigation {
   list-style: none;
   display: flex;
 }
-.navigation li {
-  padding: 0 10px;
+.nav-container .navigation li {
+  margin: 0 10px;
 }
-.navigation li a {
-  text-decoration: none;
-  color: #0f0f0f;
+.nav-container .button-container {
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid rgb(183, 183, 183);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 }/*# sourceMappingURL=styles.css.map */

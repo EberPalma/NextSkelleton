@@ -54,8 +54,34 @@ export async function POST(request, { params }) {
 
         const req = await request.json();
 
-        const query = `INSERT INTO ${slug} (name, description) VALUES (?, ?)`;
-        const values = [req.name, req.description];
+        var query;
+        var values;
+
+        if (slug == "inventory") {
+            query = `INSERT INTO ${slug} 
+                        (company_id, name, category, buy_price, sell_price, active, amount, images_allowed, max_images, images_json, files_allowed, max_files, files_json, create_time)
+                        VALUES 
+                        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+            values = [
+                req.company_id,
+                req.name,
+                req.category,
+                req.buy_price,
+                req.sell_price,
+                req.active,
+                req.amount,
+                req.images_allowed,
+                req.max_images,
+                req.images_json,
+                req.files_allowed,
+                req.max_files,
+                req.files_json,
+                Date.valueOf(),
+            ];
+        }
+
+        //const query = `INSERT INTO ${slug} (name, description) VALUES (?, ?)`;
+        //const values = [req.name, req.description];
         const [results] = await dbconnection.query(query, values);
         dbconnection.end();
 
@@ -84,8 +110,44 @@ export async function PUT(request, { params }) {
 
         const req = await request.json();
 
-        const query = `UPDATE ${slug} SET name = ?, description = ? WHERE id = ${id}`;
-        const values = [req.name, req.description];
+        var values;
+        var query;
+
+        if (slug == "inventory") {
+            query = `UPDATE ${slug} SET
+                        company_id = ?, 
+                        name = ?, 
+                        category = ?, 
+                        buy_price = ?, 
+                        sell_price = ?, 
+                        active = ?, 
+                        amount = ?, 
+                        images_allowed = ?, 
+                        max_images = ?, 
+                        images_json = ?, 
+                        files_allowed = ?, 
+                        max_files = ?, 
+                        files_json = ?
+                     WHERE id = ${id}`;
+            values = [
+                req.company_id,
+                req.name,
+                req.category,
+                req.buy_price,
+                req.sell_price,
+                req.active,
+                req.amount,
+                req.images_allowed,
+                req.max_images,
+                req.images_json,
+                req.files_allowed,
+                req.max_files,
+                req.files_json,
+            ];
+        }
+
+        //const query = `UPDATE ${slug} SET name = ?, description = ? WHERE id = ${id}`;
+        //const values = [req.name, req.description];
         const [results] = await dbconnection.query(query, values);
         dbconnection.end();
 
@@ -132,6 +194,9 @@ function validateSlug(param) {
     switch (param) {
         case "products":
             slug = "products";
+            break;
+        case "inventory":
+            slug = "inventory";
             break;
         default:
             slug = undefined;

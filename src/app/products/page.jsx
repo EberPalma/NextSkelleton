@@ -3,7 +3,10 @@ import Image from 'next/image';
 import product_image from '../../../public/image.jpg'
 
 export default async function Products(){
-    //let products = await fetch('http://localhost:3000/api/products').then(products => products);
+    let products = await fetch('http://localhost:3000/api/inventory').then(products => products);
+    products = await products.json();
+
+    let productsItem = products.map((el)=><div>{el.name}</div>)
     
     return (
     <div>
@@ -11,6 +14,9 @@ export default async function Products(){
         <div className={quicksand} style={{"position": 'relative'}} >
             <span>Image title</span><br />
             <Image src={product_image} width={500} height={150} style={{"object-fit": 'cover'}} alt="Image title"/>
+        </div>
+        <div>
+            {productsItem}
         </div>
     </div>
     );
