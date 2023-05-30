@@ -1,35 +1,18 @@
-
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-body{
+body {
     font-size: 16px;
 }
 
-.icon{
+.icon {
     height: 1em;
 }
 
-.nav-container{
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem 1rem;
-    a{
-        text-decoration: none;
-        color: #0f0f0f;
-    }
-    .navigation{
-        list-style: none;
-        display: flex;
-        li{
-            margin: 0 10px;
-        }
-    }
-    .button-container{
-        padding: 0.5rem 2rem;
-        border-bottom: 1px solid rgb(183, 183, 183);
-        box-shadow:  5px 5px 5px rgba(0,0,0,0.1),
-    }
+.btn-profile {
+    border-radius: 0px;
+    padding: 0.5rem 2rem;
+    box-shadow: 0.2rem 0.2rem 0.6rem rgb(128, 128, 128);
 }

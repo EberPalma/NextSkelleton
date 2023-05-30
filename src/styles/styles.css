@@ -11,24 +11,8 @@ body {
   height: 1em;
 }
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 2rem 1rem;
-}
-.nav-container a {
-  text-decoration: none;
-  color: #0f0f0f;
-}
-.nav-container .navigation {
-  list-style: none;
-  display: flex;
-}
-.nav-container .navigation li {
-  margin: 0 10px;
-}
-.nav-container .button-container {
+.btn-profile {
+  border-radius: 0px;
   padding: 0.5rem 2rem;
-  border-bottom: 1px solid rgb(183, 183, 183);
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0.2rem 0.2rem 0.6rem rgb(128, 128, 128);
 }/*# sourceMappingURL=styles.css.map */

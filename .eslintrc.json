@@ -3,33 +3,43 @@
     "./node_modules/standard/eslintrc.json",
     "next/core-web-vitals"
   ],
+  "plugins": [
+    "no-autofix",
+    "react"
+  ],
   "rules": {
     "no-console": "off",
     "indent": [
-      "error",
+      "warn",
       4
     ],
+    "no-autofix/indent": "warn",
     "semi": 0,
     "quotes": [
+      "error",
       "double"
     ],
     "brace-style": [
+      "warn",
       "1tbs",
       {
-        "allowSingleLine": true
+       "allowSingleLine": true
       }
     ],
     "object-curly-spacing": [
       "error",
-      "always",
       {
         "arraysInObjects": true,
+        "ImportDeclaration": "never",
         "objectsInObjects": true
       }
     ],
     "object-curly-newline": [
       "error",
-      "never"
-    ]
+      "always"
+    ],
+    "react/prop-types": "off",
+    "react/jsx-indent": 0,
+    "react/jsx-closing-tag-location": "off"
   }
 }
